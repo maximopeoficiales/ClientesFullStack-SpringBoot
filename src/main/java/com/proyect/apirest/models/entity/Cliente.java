@@ -43,14 +43,16 @@ public class Cliente implements Serializable {
      @Column(nullable = false, unique = true)
      private String email;
 
+     // notnull porque no puede ser notempty
+     @NotNull(message = "no puede estar vacio")
      @Column(name = "created_at")
      @Temporal(TemporalType.DATE) // se le especifica que tipo de fecha
      private Date createdAt;
 
      /* ciclo de vida de persistance */
-     @PrePersist
+     // antes de guardar se hara esto
+     // @PrePersist
      void prePersist() {
-          // antes de guardar se hara esto
           createdAt = new Date();
      }
 }
