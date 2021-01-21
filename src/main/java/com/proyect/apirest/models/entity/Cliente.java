@@ -49,6 +49,8 @@ public class Cliente implements Serializable {
      @Temporal(TemporalType.DATE) // se le especifica que tipo de fecha
      private Date createdAt;
 
+     private String photo;
+
      /* ciclo de vida de persistance */
      // antes de guardar se hara esto
      // @PrePersist
